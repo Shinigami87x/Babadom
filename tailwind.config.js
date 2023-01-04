@@ -5,7 +5,15 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    fontFamily: {
+      biko: ["Biko"],
+      coco: ["COCOGOOSE DemiBold"],
+    },
+    extend: {
+      backgroundImage: {
+        surreal: "url('../images/bg-surreal.svg')",
+      },
+    },
   },
   plugins: [],
 };
