@@ -3,20 +3,24 @@ import Image from "next/image";
 import logoB from "../images/babadom-B.svg";
 import logo from "../images/babadom-logo.svg";
 import { AiOutlineShopping } from "react-icons/ai";
+import { Cart } from "./";
+import { useStateContext } from "../context/StateContext";
 
 const Navbar = () => {
+  const { showCart, setShowCart, totalQuantities } = useStateContext();
   return (
-    <nav className="flex flex-row relative top-8">
-      <div className="relative ml-8">
+    <nav className="">
+    <div className="bg-separator bg-no-repeat bg-[center_bottom_4rem] flex flex-row relative top-8 z-20 mx-8 ">
+      <div className="relative ">
         <Image src={logoB} alt="babadom-B-logo" height={127} />
       </div>
-      <div className="flex flex-row mx-auto relative right-12">
+      <div className="flex flex-row mx-auto relative right-14">
         <div>
           <h2 className="relative top-16 bg-white rounded-l-full border-black border-4 py-1 px-3 mt-5 -mr-2 text-lg">
             About Hemp Fabric
           </h2>
         </div>
-        <div>
+        <div className="relative flex flex-col">
           <Image src={logo} alt="babadom-B-logo" height={300} />
         </div>
         <div>
@@ -28,13 +32,16 @@ const Navbar = () => {
       <div className="">
         <button
           type="button"
-          onClick=""
-          className="bg-white rounded-b-full border-black border-4 p-2 mr-8"
+          onClick={() => setShowCart(true)}
+          className="bg-white rounded-b-full border-black border-4 p-2"
         >
           <AiOutlineShopping />
-          <span>1</span>
+          <span>{totalQuantities}</span>
         </button>
+
+      {showCart && <Cart />}
       </div>
+    </div>
     </nav>
   );
 };

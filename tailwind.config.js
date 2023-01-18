@@ -11,7 +11,8 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        surreal: "url('../images/bg-surreal.svg')",
+        surreal: "url('../images/bg-surreal-01.svg')",
+        separator: "url('../images/separator.svg')",
       },
     },
   },
