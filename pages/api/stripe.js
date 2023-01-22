@@ -34,7 +34,7 @@ export default async function handler(req, res) {
                 images: [newImage],
               },
               unit_amount: item.price * 100,
-              tax_behavior: "inclusive",
+              tax_behavior: "exclusive",
             },
             
             adjustable_quantity: {
