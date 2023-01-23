@@ -12,6 +12,7 @@ export default async function handler(req, res) {
         mode: "payment",
         payment_method_types: ["card"],
         billing_address_collection: "auto",
+        shipping_address_collection: {allowed_countries: ['SK', 'CZ']},
         shipping_options: [
           { shipping_rate: "shr_1MSyDbE4EjBqQO019mP1JoKF" },
           { shipping_rate: "shr_1MSyFLE4EjBqQO01b2esWblW" },
@@ -36,7 +37,7 @@ export default async function handler(req, res) {
               unit_amount: item.price * 100,
               tax_behavior: "exclusive",
             },
-            
+
             adjustable_quantity: {
               enabled: true,
               minimum: 1,
