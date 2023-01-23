@@ -14,8 +14,8 @@ const Product = ({ product: { image, name, slug, price } }) => {
             height={250}
           />
           <div className="relative flex flex-row bg-white rounded-b-md drop-shadow-xl">
-            <span className="p-4">{name}</span>
-            <span className="p-4 gap">{price} €</span>
+            <span className="p-4 mr-8">{name}</span>
+            <span className="p-4 ml-10 text-right">{price} €</span>
           </div>
         </div>
       </Link>
